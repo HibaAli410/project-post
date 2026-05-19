@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Post</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./post-styling.css">
+</head>
+
+<body>
+    <nav>
+        <h1>PostHub</h1>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="postauthor">
+        <h1>Author :</h1>
+    </div>
+    <div id="posttitle">
+        <h1>Title</h1>
+    </div>
+    <div id="container">
+        <h1>Comments</h1>
+    </div>
+
+    <footer>
+        <p>© 2026 MyWebsite. All rights reserved.</p>
+    </footer>
+    <script type="module">
+        import { urlParamsId, selectedPost, comments, user } from '../modules/throughapis.js'
+        import { renderPost } from '../modules/renderpost.js'
+
+        //Ids
+        const { userId, postId } = await urlParamsId()
+        const selectedpost = await selectedPost(userId, postId)
+
+        //Post Title
+        let main = document.getElementById('posttitle')
+        selectedpost.forEach(post => {
+            renderPost(post, posttitle)
+        });
+
+        //Post Comments
+        const getComments = await comments(postId);
+        let container = document.getElementById('container')
+        getComments.forEach(comment => {
+            const span = document.createElement('span');
+            console.log(comment['body'])
+            span.textContent = comment['body']
+            container.appendChild(span)
+        });
+
+        //Post Author
+        const userinfo = await user(userId);
+        console.log(userinfo)
+        let postauthor = document.getElementById('postauthor')
+        const spanauthor = document.createElement('span');
+        spanauthor.textContent = userinfo
+        postauthor.appendChild(spanauthor)
+
+
+
+
+    </script>
+</body>
+
+</html>

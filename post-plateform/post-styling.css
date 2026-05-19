@@ -1,0 +1,55 @@
+#posttitle{
+    display: flex;
+     flex-direction: column;
+    justify-content: center;
+    
+
+}
+#posttitle span{
+    width: 100%;
+    border: none;
+    font-style: italic;
+    font-weight: 100;
+}
+#posttitle a{
+    text-decoration: none;
+    color: antiquewhite;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: xx-large;
+}
+#postauthor span{
+    width: 100%;
+    border: none;
+    font-style: italic;
+    font-weight: 100;
+    font-size: xx-large;
+}
+#container h1{
+    color: rgb(255, 255, 255);
+     text-align: left;
+     width: 100%;
+
+}
+#container{
+     display: flex;
+     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 5px;
+    margin:10px;
+    padding :10px 20px;
+    border-bottom: 2px solid #ffffff;
+    font-size: smaller;
+}
+
+span:hover{
+    background-color: #ffffff;
+    color: #530354;
+}
