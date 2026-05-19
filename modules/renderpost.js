@@ -6,7 +6,7 @@ export async function renderPost (post, main) {
   let userId = post.userId
   link.setAttribute(
     'href',
-    '../post-plateform/post.html?userId=' + userId + '&postId=' + postId
+    './post-plateform/post.html?userId=' + userId + '&postId=' + postId
   )
   // for drage and drop
   const slotid = 'slot-' + postId
